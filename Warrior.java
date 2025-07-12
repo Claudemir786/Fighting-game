@@ -1,4 +1,4 @@
-package Abstract.Rpg-game;
+
 
 import java.util.Random;
 
@@ -7,16 +7,17 @@ public class Warrior extends Character{
 
     public Warrior(String name){
         super(name);
+        setDefense(5);
+        setStrength(8);
     }     
 
     //funçâo que ataca que passa o alvo como parametro
     public void attack(Character target){
         System.out.println("The Warrior " + getName() + " attack fiercely");
-        setStrength(10);//set a força do guerreiro
+        
+        int atc = getStrength();//passa para uma variavel o nivel de força
 
-        int atc = getStrength();//passapara uma variavel o nivel de força
-
-        Random random  = new Random();//a biblioteca random é chamada
+        Random random  = new Random();//a biblioteca (classe) random é chamada
 
         int criticalHit = random.nextInt(10); //sorteia um numero aleatório de 0 10
 
@@ -28,7 +29,7 @@ public class Warrior extends Character{
             }else{
                 System.out.println("Character " + target.getName() + " is dead");
             }
-        }else if(criticalHit >0 && criticalHit <=3){
+        }else if(criticalHit >0 && criticalHit <3){
              if(target.getLife() > 0){
                 System.out.println("Bonus critical hit");
 
@@ -44,7 +45,7 @@ public class Warrior extends Character{
     //função de defesa
     public void defense(){
         System.out.println("Warrior defends");
-        setDefense(5);//determina a quantidade de defesa o guerriro tem
+        setDefense(5);//determina a quantidade de defesa o guerreiro tem
         
         setLife(getDefense()+ getLife());//adiciona a defesa a vida porque a defesa vem sempre depois do ataque inimigo
     }

@@ -1,4 +1,4 @@
-package Abstract.Rpg-game;
+
 
 public abstract class Character {
         
@@ -7,10 +7,12 @@ public abstract class Character {
     private int strength;
     private int defense;
 
+
+
     public Character(String name){
         this.name = name;
+
     }
-       
 
     public abstract void attack(Character alvo);
 

@@ -1,4 +1,4 @@
-package Abstract.Rpg-game;
+
 
 import java.util.Random;
 
@@ -6,6 +6,8 @@ public class Mage extends Character{
 
     public Mage(String name){
         super(name);
+        setStrength(13);
+        setDefense(2);
     }
 
     public void attack(Character target){
@@ -23,7 +25,7 @@ public class Mage extends Character{
             }else{
                 System.out.println("Character " + target.getName() + " is dead");
             }
-        }else if(criticalHit >0 && criticalHit <=3){
+        }else if(criticalHit >0 && criticalHit <3){
               if(target.getLife() > 0){
                 System.out.println("Bonus critical hit");    
                 target.setLife(getLife()-(atc + criticalHit));                
@@ -45,7 +47,7 @@ public class Mage extends Character{
 
      @Override
     public void showStatus(){
-        System.out.println("name: "+ getName() + " Life: "+ getLife() + " Strength: "+ getStrength() + " Defense: "+ getDefense());
+        System.out.println("name: "+ getName() + " Life: "+ this.getLife() + " Strength: "+ this.getStrength() + " Defense: "+ this.getDefense());
           
     }
 }

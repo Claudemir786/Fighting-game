@@ -1,0 +1,82 @@
+🎯 Projeto — Sistema de Batalha RPG (Avançado)
+🔥 Funcionalidades:
+Criar personagens (Guerreiro, Mago, Arqueiro) com atributos.
+
+Guardar personagens em um ArrayList.
+
+Exibir todos os personagens cadastrados.
+
+Simular uma batalha entre dois personagens.
+
+Remover personagens.
+
+Sistema de menu para interação do usuário.
+
+🏹 Estrutura das Classes:
+🔸 Classe Abstrata Personagem:
+Atributos:
+
+String nome
+
+int vida
+
+int forca
+
+int defesa
+
+Métodos abstratos:
+
+void atacar(Personagem alvo)
+
+void defender()
+
+Métodos concretos:
+
+exibirStatus()
+
+🔸 Subclasses:
+Guerreiro: Ataque forte, defesa média.
+
+Mago: Ataque mágico poderoso, defesa fraca.
+
+Arqueiro: Ataque equilibrado, pode esquivar (chance aleatória).
+
+🧠 Funcionalidades do Menu:
+Criar personagem
+
+Listar personagens
+
+Remover personagem
+
+Simular batalha
+
+Sair
+
+🗂️ Extras para Dificultar Ainda Mais:
+Usar Random para gerar dano crítico ou esquiva.
+
+Implementar turnos na batalha.
+
+Após cada ataque, mostrar status atual dos personagens.
+
+Permitir batalhas em sequência até que um dos personagens perca toda a vida.
+
+🔥 Exemplo de Funcionamento do Menu:
+diff
+Copiar
+Editar
+====== MENU RPG ======
+1 - Criar Personagem
+2 - Listar Personagens
+3 - Remover Personagem
+4 - Iniciar Batalha
+5 - Sair
+Escolha uma opção:
+💣 Desafio Extra (Opcional):
+Implemente itens de cura e buffs.
+
+Crie uma classe Inventario.
+
+Permita que o personagem use itens no meio da batalha.
+
+Se quiser, eu posso gerar o código base com a estrutura completa, classes prontas, o menu inicial e o funcionamento básico. Quer? 😎💻

@@ -1,4 +1,4 @@
-package Abstract.Rpg-game;
+
 
 
 import java.util.Random;
@@ -7,6 +7,7 @@ public class Archer extends Character {
     
     public Archer(String nome){
         super(nome);
+        setStrength(7);
     }
 
     public void attack(Character target){
@@ -26,7 +27,7 @@ public class Archer extends Character {
             }else{
                 System.out.println("Character " + target.getName() + " is dead");
             }       
-        }else if(criticalHit >0 && criticalHit <=3){
+        }else if(criticalHit >0 && criticalHit <3){
 
                 if(target.getLife() > 0){
             System.out.println("Bonus critical hit");    
