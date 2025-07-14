@@ -12,7 +12,7 @@ public class Warrior extends Character{
     }     
 
     //funçâo que ataca que passa o alvo como parametro
-    public void attack(Character target){
+    public int attack(Character target){
         System.out.println("The Warrior " + getName() + " attack fiercely");
         
         int atc = getStrength();//passa para uma variavel o nivel de força
@@ -25,29 +25,32 @@ public class Warrior extends Character{
             if(target.getLife()>0){ //verifica se o inimigo não está morto
 
                 target.setLife(target.getLife()- atc);//diminui a vida de acordo com o ataque
-
+                return target.getLife();
             }else{
                 System.out.println("Character " + target.getName() + " is dead");
+
             }
         }else if(criticalHit >0 && criticalHit <3){
              if(target.getLife() > 0){
                 System.out.println("Bonus critical hit");
 
-                target.setLife(getLife()-(atc + criticalHit));//diminui a vida de acordo com o ataque e adiciona dano critico
-                
+                target.setLife(target.getLife()-(atc + criticalHit));//diminui a vida de acordo com o ataque e adiciona dano critico
+                return target.getLife();
             }else{
                 System.out.println("Character " + target.getName() + " is dead");
             }
         }     
-   
+   return 0;
     }
 
     //função de defesa
-    public void defense(){
+    public int defense(){
         System.out.println("Warrior defends");
-        setDefense(5);//determina a quantidade de defesa o guerreiro tem
+        //setDefense(5);//determina a quantidade de defesa o guerreiro tem
         
-        setLife(getDefense()+ getLife());//adiciona a defesa a vida porque a defesa vem sempre depois do ataque inimigo
+        setLife(getDefense() + getLife());//adiciona a defesa a vida porque a defesa vem sempre depois do ataque inimigo
+
+        return getLife();
     }
 
     @Override

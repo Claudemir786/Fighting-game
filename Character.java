@@ -14,9 +14,9 @@ public abstract class Character {
 
     }
 
-    public abstract void attack(Character alvo);
+    public abstract int attack(Character alvo);
 
-    public abstract void defense();
+    public abstract int defense();
 
     public void showStatus(){
         System.out.println("name: "+ this.name + " Life: "+ this.life + "Strength: "+ this.strength + "Defence: "+ this.defense);

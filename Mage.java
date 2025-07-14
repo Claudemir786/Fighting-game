@@ -10,10 +10,10 @@ public class Mage extends Character{
         setDefense(2);
     }
 
-    public void attack(Character target){
+    public int attack(Character target){
 
         System.out.println("the Mage "+getName() + " casts his magic..!!");
-        setStrength(13);
+        //setStrength(13);
         int atc = getStrength();
 
         Random random  = new Random();
@@ -34,15 +34,15 @@ public class Mage extends Character{
                 
             }
         }
-      
+      return 0;
        
     }
 
-    public void defense(){
+    public int defense(){
         System.out.println("the Mage defends..!!");
-        setDefense(2);
-        setLife(getDefense() + getLife());
 
+        setLife(getDefense() + getLife());
+        return getLife();
     }
 
      @Override

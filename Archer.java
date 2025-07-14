@@ -10,10 +10,10 @@ public class Archer extends Character {
         setStrength(7);
     }
 
-    public void attack(Character target){
+    public int attack(Character target){
 
         System.out.println("The archer "+ getName() + " shoots his arrow!!!");
-        setStrength(7);
+        //setStrength(7);
         int atc = getStrength();
 
         Random random  = new Random();
@@ -39,10 +39,10 @@ public class Archer extends Character {
         }
             
               
-
+return 0;
       }
 
-    public void defense(){
+    public int defense(){
         System.out.println("The Archer dodges");
         Random random  = new Random();
 
@@ -50,13 +50,13 @@ public class Archer extends Character {
 
         if(dodge >= 5){ //aqui é a chance de esquivar
             System.out.println("Archer: "+ getName() +  " dodges perfectly");
-
+            return getLife();
         }else{
             System.out.println("Archer " + getName() +" can't dodge");
         }
 
         System.out.println("-------------------------------------------------------------------");
-        
+        return 0;
     }
 
      @Override

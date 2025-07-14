@@ -110,10 +110,42 @@ public class TextImage {
 
     }
     public void batlle(Character character, Character opponent){
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------");
 
-        character.showStatus();
-        opponent.showStatus();
+        System.out.println("The battle begins   epic music in the background ♪♪♪♪♪♫♫");
 
+
+        int turn = 1;
+        while(opponent.getLife()>0) {
+            System.out.println("Turn: "+ turn);
+
+            System.out.println("Attack: press 1");
+            int attack = scanner.nextInt();
+            scanner.nextLine();
+            if(attack == 1) {
+                //ataque perssonagem escolhido
+                opponent.setLife(character.attack(opponent));
+                opponent.setLife(opponent.defense());
+
+                //ataque adversário
+                character.setLife(opponent.attack(character));
+                character.setLife(character.defense());
+
+                if (opponent.getLife() <= 0) {
+                    System.out.println(character.getName() + "is the champion of the battle");
+                    break;
+                } else if (character.getLife() <= 0) {
+                    System.out.println(opponent.getName() + "is the champion of the battle");
+                    break;
+                } else {
+                    System.out.println("status: " + character.getName() + " life: " + character.getLife() + "\n" +
+                            opponent.getName() + " life: " + opponent.getLife());
+                    turn++;
+                }
+            }
+        }
     }
 }
 

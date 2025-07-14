@@ -4,9 +4,7 @@ public class Main {
     
  public static void main(String[] args) {
      TextImage textImage = new TextImage();
-     Scanner scanner = new Scanner(System.in);
-     Mage mage =  new Mage("teste");
-     mage.showStatus();
+     Scanner scanner = new Scanner(System.in);     
     System.out.println("Hello, and welcome to the most epic battle game you will ever see, enjoy and have fun");
      System.out.println("--------------------------------------------------------------------------------------");
      System.out.println("Are you ready to start the game? Press 1 for yes and 2 for no");
